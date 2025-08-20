@@ -1,36 +1,54 @@
 // src/Views/HomePage.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './HomePage.css';
 
 const HomePage = () => {
-    const [isBlue, setIsBlue] = useState(false);
+    useEffect(() => {
+    const script = document.createElement('script');
+    script.src = './script.js';
+    script.async = true; // or false for synchronous loading
+    document.body.appendChild(script);
 
-    const toggleColor = () => {
-        setIsBlue(!isBlue);
+    return () => {
+      // Cleanup: remove the script when the component unmounts
+      document.body.removeChild(script);
     };
+  }, []);
 
     return (
     
 <>
 
+    <nav class="floating-nav">
+        <div class="nav-container">
+            <div class="nav-logo">🌿 Verdant Nexus</div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Explore Platform</a>
+                <a href="#team" class="nav-link">Meet Teams</a>
+            </div>
+        </div>
+    </nav>
+
+ 
     <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Verdant Nexus</h1>
-                    <p class="subtitle">Collaborative Platform for Clinigamate Action & Biodiversity Protection</p>
-                    <p class="description">
-                        Unifying IoT, satellite data, and citizen science into one powerful platform for environmental action. 
-                        Connect communities, researchers, and organizations to protect our planet together.
-                    </p>
-                    <div class="cta-buttons">
-                        <a href="#features" class="btn btn-primary">Explore Platform</a>
-                        <a href="#team" class="btn btn-secondary">Meet the Team</a>
-                    </div>
+        <div class="hero-background-image"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Verdant Nexus</h1>
+                <p class="subtitle">Collaborative Platform for Climate Action & Biodiversity Protection</p>
+                <p class="description">
+                    Unifying IoT, satellite data, and citizen science into one powerful platform for environmental action. 
+                    Connect communities, researchers, and organizations to protect our planet together.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#features" class="btn btn-primary">Explore Platform</a>
+                    <a href="#team" class="btn btn-secondary">Meet the Team</a>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="hero-particles"></div>
+    </section>
 
-    
     <section class="features" id="features">
         <div class="container">
             <h2>Key Features</h2>
@@ -73,8 +91,6 @@ const HomePage = () => {
             </div>
         </div>
     </section>
-
-  
     <section class="innovation">
         <div class="container">
             <h2>Innovation & Technology</h2>
@@ -102,7 +118,6 @@ const HomePage = () => {
         </div>
     </section>
 
-  
     <section class="tech-stack">
         <div class="container">
             <h2>Technical Architecture</h2>
@@ -147,7 +162,6 @@ const HomePage = () => {
         </div>
     </section>
 
-  
     <section class="impact">
         <div class="container">
             <h2>Impact & Benefits</h2>
@@ -191,7 +205,7 @@ const HomePage = () => {
         </div>
     </section>
 
-    <section class="team">
+    <section class="team" id="team">
         <div class="container">
             <h2>Team ByteMe</h2>
             <p>HackHeritage 3.0 | Problem Statement HH306</p>
@@ -219,7 +233,6 @@ const HomePage = () => {
         </div>
     </section>
 
-
     <footer>
         <div class="container">
             <p>&copy; 2025 Verdant Nexus - Team ByteMe | Building a sustainable future through collaborative technology</p>
@@ -228,6 +241,7 @@ const HomePage = () => {
             </p>
         </div>
     </footer>
+        
 </>
 
         

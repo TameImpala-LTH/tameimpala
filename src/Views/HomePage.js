@@ -8,7 +8,7 @@ const Navbar = () => (
             <div className="nav-logo">🌿 Verdant Nexus</div>
             <div className="nav-links">
                 <a href="#features" className="nav-link">Explore Platform</a>
-                <a href="#team" className="nav-link">Meet Teams</a>
+                <a href="#team" className="nav-link">Meet Team Members</a>
             </div>
         </div>
     </nav>

@@ -36,9 +36,9 @@ const Hero = () => (
 
 // Component for the Features Section
 const Features = () => (
-    <section className="features" id="features">
+    <section className="features" id="features" style={{ background: "url('./pakhi.jpg')" }}>
         <div className="container">
-            <h2>Key Features</h2>
+            <h2 style={{color: "#0EBD4D"}}>Key Features</h2>
             <div className="features-grid">
                 <div className="feature-card">
                     <div className="feature-icon">🔬</div>
@@ -300,7 +300,7 @@ function App() {
             <Hero />
             <Features />
             <Innovation />
-            <TechStack />
+            {/* <TechStack /> */}
             <Impact />
             <Team />
             <Footer />

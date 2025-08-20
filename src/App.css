@@ -234,6 +234,10 @@ html {
 /* Enhanced 3D Features Section */
 .features {
     padding: 100px 0;
+    /* background: url('./pakhi.jpg'); */
+    background: #020024;
+    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+
     /* background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); */
     background: #F0F8FF;
     position: relative;
@@ -321,9 +325,7 @@ html {
 .innovation {
     padding: 120px 0;
     /* background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #8b5cf6 100%); */
-    background: #020024;
-    background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
-
+    
     color: white;
     position: relative;
     overflow: hidden;
@@ -846,7 +848,10 @@ html {
 /* Impact Section */
 .impact {
     padding: 100px 0;
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    /* background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); */
+    background: #1E2751;
+background: linear-gradient(135deg,rgba(30, 39, 81, 1) 32%, rgba(0, 148, 59, 1) 100%);
+
     color: white;
     position: relative;
     overflow: hidden;

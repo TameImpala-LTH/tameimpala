@@ -76,28 +76,40 @@ html {
 
 /* Enhanced 3D Hero Section */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  position: relative;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+
+  /* Background Image */
+  background-image: url('./assets/gifs/images/bd.png'); /* correct path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background:
-        radial-gradient(circle at 20% 20%, rgba(16,185,129,0.3) 0%, transparent 50%),
-        radial-gradient(circle at 80% 30%, rgba(59,130,246,0.25) 0%, transparent 50%),
-        radial-gradient(circle at 40% 70%, rgba(139,92,246,0.2) 0%, transparent 50%),
-        radial-gradient(circle at 90% 90%, rgba(16,185,129,0.15) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.70); /* 60% black overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* ensures text appears above overlay */
+}
+
+.hero > * {
+  position: relative;
+  z-index: 2; /* keeps your text above overlay */
 }
 
 @keyframes float {

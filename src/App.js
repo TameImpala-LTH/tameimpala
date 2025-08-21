@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css'; // Assuming you have a CSS file for styles
+import MapDisplay from './MapDisplay';
 
 // Component for the Floating Navigation Bar
 const Navbar = () => (
@@ -39,6 +40,10 @@ const Features = () => (
     <section className="features" id="features" style={{ background: "url('./pakhi.jpg')" }}>
         <div className="container">
             <h2 style={{color: "#0EBD4D"}}>Key Features</h2>
+
+            <div style={{ height: "50vh", width: "100vw" }}>
+                <MapDisplay />
+            </div>
             <div className="features-grid">
                 <div className="feature-card">
                     <div className="feature-icon">🔬</div>

@@ -16,6 +16,18 @@ html {
     scroll-behavior: smooth;
 }
 
+.my-map-container {
+    height: 140vh;
+    width: 100vw;
+}
+
+/* set my map container to 50vh in mobile */
+@media (max-width: 768px) {
+    .my-map-container {
+        height: 50vh;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

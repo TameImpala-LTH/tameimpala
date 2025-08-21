@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
-import "./map.css"; // adjust path if needed
+import React, { useEffect, useRef } from "react";
+import "./map.css";
 
 const MapDisplay = () => {
+  const initialized = useRef(false);
+
   useEffect(() => {
-    // Load external scripts dynamically
+    if (initialized.current) return; // prevent duplicate initialization
+    initialized.current = true;
+
     const loadScript = (src) => {
       return new Promise((resolve, reject) => {
         const script = document.createElement("script");
@@ -15,7 +19,6 @@ const MapDisplay = () => {
       });
     };
 
-    // Load scripts in correct order
     const loadAll = async () => {
       try {
         await loadScript("/raphael.min.js");
@@ -23,7 +26,6 @@ const MapDisplay = () => {
         await loadScript("/paths.js");
         await loadScript("/map.js");
 
-        // Ensure FlaMap is available
         if (window.FlaMap && window.map_cfg) {
           const map = new window.FlaMap(window.map_cfg);
           map.drawOnDomReady("map-container");
@@ -36,7 +38,27 @@ const MapDisplay = () => {
     loadAll();
   }, []);
 
-  return <div id="map-container" style={{ width: "100%", height: "600px" }} />;
+  return (
+    <>
+      <div
+        id="map-wrapper"
+        style={{
+          width: "100%",
+          maxWidth: "900px", // limit size
+          margin: "0 auto", // center it
+        }}
+      >
+        <div
+          id="map-container"
+          style={{
+            width: "100%",
+            height: "auto",
+            aspectRatio: "16 / 9", // keeps proportions
+          }}
+        />
+      </div>
+    </>
+  );
 };
 
 export default MapDisplay;

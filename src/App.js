@@ -41,7 +41,7 @@ const Features = () => (
         <div className="container">
             <h2 style={{color: "#0EBD4D"}}>Key Features</h2>
 
-            <div style={{ height: "140vh", width: "100vw" }} className="my-map-container">
+            <div style={{ width: "100vw" }} className="my-map-container">
                 <MapDisplay />
             </div>
             <div className="features-grid">

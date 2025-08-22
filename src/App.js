@@ -39,8 +39,7 @@ const Hero = () => (
 const Features = () => (
     <section className="features" id="features" style={{ background: "url('./pakhi.jpg')" }}>
         <div className="container">
-            <h2 style={{color: "#0EBD4D"}}>Key Features</h2>
-
+            <h2 style={{color: "#0EBD4D"}}>Endangered and Extint Animals</h2>
             <div style={{ height: "140vh", width: "100vw" }} className="my-map-container">
                 <MapDisplay />
             </div>

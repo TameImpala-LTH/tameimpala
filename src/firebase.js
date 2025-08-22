@@ -1,21 +1,37 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID
+  apiKey: "AIzaSyAgnBE5dWcBzLAyqCg9sm1nKej-3LIHKHs",
+  authDomain: "heritage-byteme-hackathon.firebaseapp.com",
+  projectId: "heritage-byteme-hackathon",
+  storageBucket: "heritage-byteme-hackathon.firebasestorage.app",
+  messagingSenderId: "511488166181",
+  appId: "1:511488166181:web:bee7669697365d13cd72cc"
 };
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCC-Uv30PtlBm50MxPMgqosyeRFUhH_BpE",
+//   authDomain: "tameimpala-7023e.firebaseapp.com",
+//   projectId: "tameimpala-7023e",
+//   storageBucket: "tameimpala-7023e.firebasestorage.app",
+//   messagingSenderId: "913194355309",
+//   appId: "1:913194355309:web:efb12f40e4cfd6adfd8d64",
+//   measurementId: "G-TXSFK3VXRW"
+// };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+export const googleProvider = new GoogleAuthProvider();
+export const db = getFirestore(app);

@@ -6,26 +6,37 @@ import { useAuth } from "./context/AuthContext";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import AuthPage from "./components/AuthPage";
+import LogoutButton from "./components/LogoutButton";
 
 // Component for the Floating Navigation Bar
-const Navbar = () => (
-  <nav className="floating-nav">
-    <div className="nav-container">
-      <div className="nav-logo">🌿 Verdant Nexus</div>
-      <div className="nav-links">
+
+const Navbar = () => {
+  const { user, role } = useAuth();
+
+  return (
+    <nav className="floating-nav">
+      <div className="nav-container">
+        <div className="nav-logo">🌿 Verdant Nexus</div>
+        <div className="nav-links">
         <a href="#features" className="nav-link">
           Explore Platform
         </a>
         <a href="#team" className="nav-link">
           Meet the members
         </a>
-        <a href="#register" className="nav-link">
-          Register
-        </a>
+        {user ? (
+          <a href="#logout" className="nav-link">
+            <LogoutButton />
+          </a>
+        ) : (
+          <a href="#register" className="nav-link">
+            Register
+          </a>
+        )}
       </div>
     </div>
   </nav>
-);
+);}
 
 // Component for the Hero Section
 const Hero = () => (

@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import AuthPage from "./components/AuthPage";
 import LogoutButton from "./components/LogoutButton";
 
+
 // Component for the Floating Navigation Bar
 
 const Navbar = () => {

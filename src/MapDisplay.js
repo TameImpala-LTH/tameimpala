@@ -22,9 +22,9 @@ const MapDisplay = () => {
     const loadAll = async () => {
       try {
         await loadScript("/raphael.min.js");
+        await loadScript("/map.js");
         await loadScript("/settings.js");
         await loadScript("/paths.js");
-        await loadScript("/map.js");
 
         if (window.FlaMap && window.map_cfg) {
           const map = new window.FlaMap(window.map_cfg);

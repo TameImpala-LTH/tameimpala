@@ -7,6 +7,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import AuthPage from "./components/AuthPage";
 import LogoutButton from "./components/LogoutButton";
+import ChatbotPopup from "./components/ChatbotPopup";
 
 
 // Component for the Floating Navigation Bar
@@ -403,6 +404,8 @@ function App() {
     <div className="App">
       <Navbar />
       <Hero />
+      <ChatbotPopup />
+
       {/* <Auth /> */}
 
       <Features />

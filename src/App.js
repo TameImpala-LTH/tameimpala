@@ -75,7 +75,7 @@ const Features = () => (
     style={{ background: "url('./pakhi.jpg')" }}
   >
     <div className="container">
-      <h2 style={{ color: "#0EBD4D" }}>Endengered and Extinct Animals</h2>
+      <h2 style={{ color: "#0EBD4D" }}>Endangered and Extinct Animals</h2>
 
       <div style={{ width: "100vw" }} className="my-map-container">
         <MapDisplay />
